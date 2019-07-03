@@ -17,7 +17,7 @@ var ajaxGet = function() {
       var tabelUserBody = tabelUser.querySelector('tbody');
       tabelUserBody.innerHTML = '';
       // lakukan loop terhadap data untuk membuat baris tabel, lalu isikan
-      // barisnya ke <tbody> dalam tabelme
+      // barisnya ke <tbody> dalam tabel
       data.forEach(function(row, i) {
         // buat DOM untuk barisnya
         var tr = document.createElement('tr');
