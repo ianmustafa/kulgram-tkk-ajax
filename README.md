@@ -5,10 +5,9 @@
 ## Cara Install
 
 1. Clone: `git clone https://github.com/ianmustafa/kulgram-tkk-ajax` atau [Download zip](https://github.com/ianmustafa/kulgram-tkk-ajax/archive/master.zip) dan ekstrak.
-2. Salin `db.example.sqlite` menjadi `db.sqlite`.
-3. Pengguna XAMPP / MAMP dsb. wajib mengedit file `.htaccess` di bagian `RewriteBase`. Ganti `/` dengan nama folder project yang Anda gunakan, contoh: `/kulgram-tkk-ajax/`.
-4. Akses project dari browser.
-5. Profit.
+2. Pengguna XAMPP / MAMP dsb. wajib mengedit file `.htaccess` di bagian `RewriteBase`. Ganti `/` dengan nama folder project yang Anda gunakan, contoh: `/kulgram-tkk-ajax/`.
+3. Akses project dari browser.
+4. Profit.
 
 ## Ada pertanyaan?
 Anda bisa menghubungi saya via Telegram [@ianmustafa](https://telegram.me/ianmustafa).

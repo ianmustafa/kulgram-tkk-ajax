@@ -3,7 +3,7 @@ var ajaxGet = function() {
   // inisialisasikan class XMLHttpRequest terlebih dulu
   var ajax = new XMLHttpRequest();
   // siapkan koneksi AJAX untuk tambah data baru
-  ajax.open('GET', 'actions.php?act=get_ajax', true);
+  ajax.open('GET', 'https://stub.ianmustafa.com/kulgram-tkk-ajax/', true);
 
   // event listener ini akan dijalankan ketika proses AJAX berhasil.
   // disini kita akan mengisi tabel dengan data dari response
@@ -47,7 +47,7 @@ var ajaxTambah = function(data) {
   // inisialisasikan class XMLHttpRequest terlebih dulu
   var ajax = new XMLHttpRequest();
   // siapkan koneksi AJAX untuk tambah data baru
-  ajax.open('POST', 'actions.php?act=tambah_ajax', true);
+  ajax.open('POST', 'https://stub.ianmustafa.com/kulgram-tkk-ajax/', true);
 
   // event listener ini akan dijalankan ketika proses AJAX berhasil.
   // disini kita akan memanggil fungsi ajaxGet untuk
@@ -67,6 +67,12 @@ var ajaxTambah = function(data) {
   // Kirim datanya
   ajax.send(data);
 };
+
+// buat event listener untuk mengisi tabel ketika halaman sudah siap
+document.addEventListener('DOMContentLoaded', function(event) {
+  // panggil fungsi ajaxGet untuk mengisi tabel
+  ajaxGet();
+});
 
 // buat event listener untuk form ketika proses submit data dijalankan
 var formTambah = document.getElementById('form-user');
