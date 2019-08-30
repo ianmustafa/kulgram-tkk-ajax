@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Kulgram Taman Kode-Kode: AJAX dengan Axios</title>
+
+  <!-- disini saya pakai Bulma untuk styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
+  <style>
+  body {
+      padding: 2rem 1rem;
+  }
+  </style>
+</head>
+<body>
+  <!-- Kita berikan ID #app ke elemen .container halaman, sebagai
+    tempat instansiasi template Vue. -->
+  <div id="app" class="container">
+    <h1 class="title">
+      Kulgram Taman Kode-Kode: AJAX dengan Axios
+    </h1>
+
+    <div class="columns">
+      <div class="column is-half-desktop">
+        <h3 class="title is-4">Daftar Semua User</h3>
+        <table class="table is-fullwidth is-striped">
+          <thead>
+            <tr>
+              <th width="10%"><abbr title="Nomor">No</abbr></th>
+              <th width="30%">Nama</th>
+              <th>Alamat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Disini, kita buat looping v-for untuk menampilkan data ke tabel.
+              Looping ini akan membuat elemen <tr> yang jumlahnya sesuai dengan
+              jumlah data sumber, dalam hal ini dari collection.
+              collection disini diambil dari instace data Vue yang sudah
+              dideklarasikan dan diisi datanya oleh method ajaxGet().
+              :key disini digunakan untuk menandai masing-masing baris data
+              di tabel dengan nilai unik, jadi kita akan gunakan ID
+              dari masing-masing data. -->
+            <tr v-for="(user, i) in listUser" :key="user.id">
+              <!-- Notasi kurung kurawal dobel dibawah dipakai untuk me-render
+                data ke halaman. Kita gunakan variabel index i
+                untuk membuat nomor baris. -->
+              <td>{{ i + 1 }}</td>
+              <!-- Lanjutkan dengan menampilkan data dari masing-masing baris. -->
+              <td>{{ user.nama }}</td>
+              <td>{{ user.alamat }}</td>
+            </tr>
+            <!-- Looping <tr> selesai. -->
+          </tbody>
+        </table>
+      </div>
+      <div class="column is-half-desktop">
+        <h3 class="title is-4">Tambah User</h3>
+        <!-- Notasi @submit disini dipakai sebagai event listener untuk submit form.
+          Modifier .prevent disini dipakai supaya halaman tidak terkena refresh
+          saat form di-submit. Kita gunakan event listener berikut untuk
+          memanggil ajaxSimpan() ketika form di-submit oleh user. -->
+        <form @submit.prevent="ajaxSimpan">
+          <div class="field">
+            <label class="label">Nama</label>
+            <div class="control">
+              <!-- Notasi v-model disini dipakai untuk mendeklarasikan binding data
+                dua arah dari input ke instance data Vue. Jadi ketika data dari
+                satu tempat diedit, data di tempat lain juga ikut berubah.
+                Dalam kasus ini, ketika input diisi, data di instance data Vue
+                akan otomatis berubah. Begitu juga sebaliknya, ketika data di
+                instance Vue diubah, nilai dalam input juga akan berubah.
+                Mari kita binding input:text berikut dengan properti
+                payload.nama dalam instance data Vue. -->
+              <input class="input" type="text" v-model="payload.nama" placeholder="Tulis nama disini" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Alamat</label>
+            <div class="control">
+              <!-- Kita juga deklasaikan binding data dua arah antara
+                textarea berikut dengan properti payload.alamat
+                dalam instance data Vue. -->
+              <textarea class="textarea" v-model="payload.alamat" placeholder="Tulis alamat disini" required></textarea>
+            </div>
+          </div>
+
+          <div class="field is-grouped">
+            <div class="control">
+              <button type="submit" class="button is-link">Tambahkan Data</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios@0.19.0/dist/axios.min.js"></script>
+  <script src="ajax-vue-axios.js"></script>
+</body>
+</html>
