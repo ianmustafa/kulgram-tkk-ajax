@@ -11,6 +11,10 @@
   body {
       padding: 2rem 1rem;
   }
+  .is-cover {
+    max-width: 900px;
+    margin: 2rem auto;
+  }
   </style>
 </head>
 <body>
@@ -19,23 +23,35 @@
       Kulgram Taman Kode-Kode: AJAX
     </h1>
 
-    <div class="columns">
+    <div class="columns is-multiline is-centered">
       <div class="column is-one-third-desktop">
-        <a class="button is-medium" href="ajax.html" title="AJAX dengan XMLHttpRequest">
+        <a class="button is-large is-fullwidth" href="ajax.html" title="AJAX dengan XMLHttpRequest">
           AJAX dengan <code>XMLHttpRequest</code>
         </a>
       </div>
 
       <div class="column is-one-third-desktop">
-        <a class="button is-medium" href="ajax-jquery.html" title="AJAX dengan jQuery">
+        <a class="button is-large is-fullwidth" href="ajax-jquery.html" title="AJAX dengan jQuery">
           AJAX dengan jQuery
         </a>
       </div>
 
       <div class="column is-one-third-desktop">
-        <a class="button is-medium" href="ajax-axios.html" title="AJAX dengan Axios">
+        <a class="button is-large is-fullwidth" href="ajax-axios.html" title="AJAX dengan Axios">
           AJAX dengan Axios
         </a>
+      </div>
+
+      <div class="column is-half">
+        <a class="button is-large is-fullwidth" href="ajax-axios.html" title="AJAX dengan Axios">
+          <strong>Bonus!</strong>&nbsp;AJAX dengan Vue.js dan Axios
+        </a>
+      </div>
+
+      <div class="column is-full">
+        <figure class="image is-cover">
+          <img src="https://ianmustafa.github.io/kulgram-tkk-ajax/cover.jpg" width="600" alt="Gambar Sampul">
+        </figure>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-![Kuliah Telegram Taman Kode-Kode: AJAX](https://raw.githubusercontent.com/ianmustafa/kulgram-tkk-ajax/master/cover.jpg)
+![Kuliah Telegram Taman Kode-Kode: AJAX](https://ianmustafa.github.io/kulgram-tkk-ajax/cover.jpg)
 
 # Kuliah Telegram Taman Kode-Kode: AJAX
 
